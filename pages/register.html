@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register - Goo Ride</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="../assets/css/styles.css">
+  
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body style="font-family: 'Poppins', sans-serif; background-color: #f8f9fa;">
+    <!-- Header Section -->
+    <header class="header sticky-top">
+        <nav class="navbar navbar-dark bg-dark py-2">
+            <div class="container">
+                <div class="d-flex align-items-center w-100 gap-3">
+                    <a class="navbar-brand me-3" href="../index.html">GOO RIDE</a>
+                    <a href="../index.html" class="home-btn text-white">
+                        <i class="fas fa-home fs-4"></i>
+                    </a>
+                    <div class="flex-grow-1"></div>
+                    <div class="dropdown">
+                        <button class="btn btn-link text-white p-0" data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class="fas fa-user fs-4"></i>
+                        </button>
+                        <ul class="dropdown-menu dropdown-menu-end" id="userMenu">
+                            <!-- Menu items will be populated by JavaScript -->
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container py-5">
+        <div style="max-width: 500px; margin: 0 auto; padding: 2rem; border-radius: 10px; box-shadow: 0 0 20px rgba(0, 0, 0, 0.1); background-color: white; animation: fadeIn 0.5s ease-in;">
+            <div style="text-align: center; margin-bottom: 2rem;">
+                <h2>Create Your Account</h2>
+                <p style="color: #6c757d;">Join Goo Ride to access exclusive features</p>
+            </div>
+            <form id="registerForm" novalidate>
+                <!-- Full Name Field -->
+                <div style="margin-bottom: 1.5rem; position: relative;">
+                    <input type="text" class="form-control" id="fullName" placeholder="Full Name" required style="transition: box-shadow 0.3s;">
+                    <label for="fullName" style="position: absolute; top: 0; left: 12px; font-size: 0.9rem; color: #6c757d; transform: translateY(-50%); background: white; padding: 0 4px;">Full Name</label>
+                    <div class="invalid-feedback">Please enter your full name</div>
+                </div>
+                
+                <!-- Email Field -->
+                <div style="margin-bottom: 1.5rem; position: relative;">
+                    <input type="email" class="form-control" id="email" placeholder="name@example.com" required style="transition: box-shadow 0.3s;">
+                    <label for="email" style="position: absolute; top: 0; left: 12px; font-size: 0.9rem; color: #6c757d; transform: translateY(-50%); background: white; padding: 0 4px;">Email address</label>
+                    <div class="invalid-feedback">Please enter a valid email address</div>
+                </div>
+                
+                <!-- Password Field -->
+                <div style="margin-bottom: 1.5rem; position: relative;">
+                    <input type="password" class="form-control" id="password" placeholder="Password" required style="transition: box-shadow 0.3s;">
+                    <label for="password" style="position: absolute; top: 0; left: 12px; font-size: 0.9rem; color: #6c757d; transform: translateY(-50%); background: white; padding: 0 4px;">Password</label>
+                    <div class="invalid-feedback">Please enter a password</div>
+                </div>
+                
+                <!-- Confirm Password Field -->
+                <div style="margin-bottom: 1.5rem; position: relative;">
+                    <input type="password" class="form-control" id="confirmPassword" placeholder="Confirm Password" required style="transition: box-shadow 0.3s;">
+                    <label for="confirmPassword" style="position: absolute; top: 0; left: 12px; font-size: 0.9rem; color: #6c757d; transform: translateY(-50%); background: white; padding: 0 4px;">Confirm Password</label>
+                    <div class="invalid-feedback">Passwords do not match</div>
+                </div>
+                
+                <!-- Profile Photo Upload -->
+                <div style="margin-bottom: 1.5rem;">
+                    <label for="profilePhoto" style="font-weight: 500; color: #343a40;">Upload Profile Photo</label>
+                    <input type="file" class="form-control" id="profilePhoto" accept="image/*" capture="user" onchange="previewPhoto(event)" style="transition: box-shadow 0.3s;">
+                    <small style="color: #6c757d;">Opening camera. Note: Some devices may open the gallery instead due to browser limitations.</small>
+                    <div class="invalid-feedback d-block" id="photoInvalid" style="display: none;">Please select a valid image file</div>
+                    <div style="text-align: center; margin-top: 1rem;">
+                        <img id="photoPreview" src="#" alt="Photo Preview" class="d-none img-fluid rounded-circle" style="max-width: 100px; max-height: 100px; object-fit: cover; border: 1px solid #dee2e6; padding: 4px;">
+                    </div>
+                </div>
+                
+                <!-- Terms Checkbox -->
+                <div class="form-check" style="margin-bottom: 1.5rem;">
+                    <input class="form-check-input" type="checkbox" id="terms" required>
+                    <label class="form-check-label" for="terms">I accept the <a href="terms-of-service.html" style="color: #0d6efd; text-decoration: none;">Terms of Service</a></label>
+                    <div class="invalid-feedback">You must accept the terms</div>
+                </div>
+                
+                <!-- Register Button -->
+                <button type="submit" class="btn btn-primary" style="width: 100%; padding: 0.75rem; font-size: 1.1rem; margin-bottom: 1rem; background: linear-gradient(90deg, #0d6efd, #6610f2); border: none; transition: transform 0.2s;">
+                    <i class="fas fa-user-plus me-2"></i>Register
+                </button>
+                
+                <!-- Divider -->
+                <div style="display: flex; align-items: center; margin: 1.5rem 0;">
+                    <span style="flex: 1; border-bottom: 1px solid #dee2e6;"></span>
+                    <span style="padding: 0 1rem; color: #6c757d;">OR</span>
+                    <span style="flex: 1; border-bottom: 1px solid #dee2e6;"></span>
+                </div>
+                
+                <!-- Social Login -->
+                <div style="display: flex; justify-content: center; gap: 1rem; margin-bottom: 1.5rem;">
+                    <button type="button" class="btn btn-outline-primary social-btn" data-platform="Google" style="width: 50px; height: 50px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.25rem; border-color: #db4437; transition: transform 0.2s, background-color 0.2s;">
+                        <i class="fab fa-google" style="color: #d3b6b3;"></i>
+                    </button>
+                    <button type="button" class="btn btn-outline-primary social-btn" data-platform="Facebook" style="width: 50px; height: 50px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.25rem; border-color: #3b5998; transition: transform 0.2s, background-color 0.2s;">
+                        <i class="fab fa-facebook-f" style="color: #aeb9d1;"></i>
+                    </button>
+                    <button type="button" class="btn btn-outline-primary social-btn" data-platform="Apple" style="width: 50px; height: 50px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.25rem; border-color: #000000; transition: transform 0.2s, background-color 0.2s;">
+                        <i class="fab fa-apple" style="color: #918e8e;"></i>
+                    </button>
+                </div>
+                
+                <!-- Login Link -->
+                <div style="text-align: center;">
+                    <p style="margin: 0;">Already have an account? <a href="login.html" style="color: #0d6efd; text-decoration: none;">Log In</a></p>
+                </div>
+            </form>
+        </div>
+
+        <!-- Social Login Modal -->
+        <div class="modal fade" id="socialLoginModal" tabindex="-1" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content" style="border-radius: 10px; box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);">
+                    <div class="modal-body text-center" style="padding: 2rem;">
+                        <h5 id="modalPlatform">Connecting...</h5>
+                        <p>Please wait while we connect to your account.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer style="background-color: #212529; color: white; padding: 5rem 0;">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 mb-4 mb-md-0">
+                    <h5>Goo Ride</h5>
+                    <p>Your trusted partner for bike rentals across India.</p>
+                    <div style="display: flex; gap: 1rem;">
+                        <a href="#" style="color: white;"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" style="color: white;"><i class="fab fa-twitter"></i></a>
+                        <a href="#" style="color: white;"><i class="fab fa-instagram"></i></a>
+                        <a href="#" style="color: white;"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="col-md-2 mb-4 mb-md-0">
+                    <h5>Quick Links</h5>
+                    <ul style="list-style: none; padding: 0;">
+                        <li><a href="../index.html" style="color: white; text-decoration: none;">Home</a></li>
+                        <li><a href="#" style="color: white; text-decoration: none;">Vehicles</a></li>
+                        <li><a href="#" style="color: white; text-decoration: none;">Pricing</a></li>
+                        <li><a href="#" style="color: white; text-decoration: none;">Locations</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3 mb-4 mb-md-0">
+                    <h5>Contact Us</h5>
+                    <ul style="list-style: none; padding: 0;">
+                        <li><i class="fas fa-map-marker-alt me-2"></i>123 Street, Mumbai</li>
+                        <li><i class="fas fa-phone me-2"></i>+91 9876543210</li>
+                        <li><i class="fas fa-envelope me-2"></i>info@goodride.com</li>
+                    </ul>
+                </div>
+                <div class="col-md-3">
+                    <h5>Newsletter</h5>
+                    <form id="newsletterForm">
+                        <div style="margin-bottom: 1rem;">
+                            <input type="email" class="form-control" id="newsletterEmail" placeholder="Your Email">
+                        </div>
+                        <button type="submit" class="btn btn-primary">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+            <hr style="border-color: #6c757d; margin: 2rem 0;">
+            <div class="row">
+                <div class="col-md-6 text-center text-md-start">
+                    <p style="margin: 0;">© 2025 Goo Ride. All rights reserved.</p>
+                </div>
+                <div class="col-md-6 text-center text-md-end">
+                    <a href="../docs/privacy-policy.html" class="text-white me-3">Privacy Policy</a>
+                    <a href="../docs/terms-of-service.html" class="text-white me-3">Terms of Service</a>
+                    <a href="../docs/faq.html" class="text-white">FAQ</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        console.log('Register script loaded');
+        let isLoggedIn = localStorage.getItem('isLoggedIn') === 'true';
+        
+        function showSocialModal(platform) {
+            console.log(`Social button clicked: ${platform}`);
+            const modal = new bootstrap.Modal(document.getElementById('socialLoginModal'));
+            document.getElementById('modalPlatform').textContent = `Connecting to ${platform}...`;
+            modal.show();
+            setTimeout(() => modal.hide(), 2000); // Auto-close after 2 seconds
+        }
+
+        function populateUserMenu() {
+            console.log('populateUserMenu called, isLoggedIn:', isLoggedIn);
+            const userMenu = document.getElementById('userMenu');
+            if (!userMenu) {
+                console.error('User menu element not found');
+                return;
+            }
+
+            if (isLoggedIn) {
+                userMenu.innerHTML = `
+                    <li><a class="dropdown-item" href="profile.html"><i class="fas fa-user me-2"></i>Profile</a></li>
+                    <li><a class="dropdown-item" href="posts.html"><i class="fas fa-list me-2"></i>My Posts</a></li>
+                    <li><a class="dropdown-item" href="likes.html"><i class="fas fa-heart me-2"></i>Likes</a></li>
+                    <li><a class="dropdown-item" href="saved.html"><i class="fas fa-bookmark me-2"></i>Saved</a></li>
+                    <li><a class="dropdown-item" href="history.html"><i class="fas fa-history me-2"></i>History</a></li>
+                    <li><a class="dropdown-item" href="notifications.html"><i class="fas fa-bell me-2"></i>Notifications</a></li>
+                    <li><a class="dropdown-item" href="settings.html"><i class="fas fa-cog me-2"></i>Settings</a></li>
+                    <li><a class="dropdown-item" href="language.html"><i class="fas fa-language me-2"></i>Language</a></li>
+                    <li><a class="dropdown-item" href="help.html"><i class="fas fa-question-circle me-2"></i>Help</a></li>
+                    <li><a class="dropdown-item" href="install.html"><i class="fas fa-download me-2"></i>Install App</a></li>
+                    <li><hr class="dropdown-divider"></li>
+                    <li><a class="dropdown-item text-danger" href="#" id="logoutBtn"><i class="fas fa-sign-out-alt me-2"></i>Log Out</a></li>
+                `;
+                console.log('Logged-in menu populated');
+                
+                const logoutBtn = document.getElementById('logoutBtn');
+                if (logoutBtn) {
+                    logoutBtn.addEventListener('click', function(e) {
+                        e.preventDefault();
+                        console.log('Logout clicked');
+                        localStorage.removeItem('isLoggedIn');
+                        isLoggedIn = false;
+                        populateUserMenu();
+                        window.location.href = '../index.html';
+                    });
+                } else {
+                    console.error('Logout button not found');
+                }
+            } else {
+                userMenu.innerHTML = `
+                    <li><a class="dropdown-item" href="help.html"><i class="fas fa-question-circle me-2"></i>Help</a></li>
+                    <li><a class="dropdown-item" href="install.html"><i class="fas fa-download me-2"></i>Install App</a></li>
+                    <li><hr class="dropdown-divider"></li>
+                    <li><a class="dropdown-item" href="login.html"><i class="fas fa-sign-in-alt me-2"></i>Log In</a></li>
+                    <li><a class="dropdown-item" href="register.html"><i class="fas fa-user-plus me-2"></i>Register</a></li>
+                `;
+                console.log('Not logged-in menu populated');
+            }
+        }
+
+        function previewPhoto(event) {
+            const file = event.target.files[0];
+            const preview = document.getElementById('photoPreview');
+            const invalidFeedback = document.getElementById('photoInvalid');
+            
+            if (file && file.type.startsWith('image/')) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    preview.src = e.target.result;
+                    preview.classList.remove('d-none');
+                    invalidFeedback.style.display = 'none';
+                };
+                reader.readAsDataURL(file);
+            } else {
+                preview.classList.add('d-none');
+                invalidFeedback.style.display = 'block';
+            }
+        }
+        
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('DOMContentLoaded event fired');
+            populateUserMenu();
+            
+            // Add input focus glow
+            const inputs = document.querySelectorAll('input');
+            inputs.forEach(input => {
+                input.addEventListener('focus', function() {
+                    this.style.boxShadow = '0 0 8px rgba(13, 110, 253, 0.3)';
+                });
+                input.addEventListener('blur', function() {
+                    this.style.boxShadow = 'none';
+                });
+            });
+
+            // Add hover effect to register button
+            const registerButton = document.querySelector('button[type="submit"]');
+            if (registerButton) {
+                registerButton.addEventListener('mouseover', function() {
+                    this.style.transform = 'scale(1.05)';
+                });
+                registerButton.addEventListener('mouseout', function() {
+                    this.style.transform = 'scale(1)';
+                });
+            }
+
+            // Add social button click handlers
+            const socialButtons = document.querySelectorAll('.social-btn');
+            socialButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    const platform = this.getAttribute('data-platform');
+                    showSocialModal(platform);
+                });
+            });
+
+            const form = document.getElementById('registerForm');
+            if (form) {
+                form.addEventListener('submit', function(event) {
+                    event.preventDefault();
+                    console.log('Form submitted');
+                    
+                    const fullName = document.getElementById('fullName');
+                    const email = document.getElementById('email');
+                    const password = document.getElementById('password');
+                    const confirmPassword = document.getElementById('confirmPassword');
+                    const profilePhoto = document.getElementById('profilePhoto');
+                    const terms = document.getElementById('terms');
+                    
+                    let isValid = true;
+
+                    // Check required fields
+                    if (!fullName.value.trim()) {
+                        fullName.classList.add('is-invalid');
+                        isValid = false;
+                    } else {
+                        fullName.classList.remove('is-invalid');
+                    }
+
+                    if (!email.value.trim() || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.value)) {
+                        email.classList.add('is-invalid');
+                        isValid = false;
+                    } else {
+                        email.classList.remove('is-invalid');
+                    }
+
+                    if (!password.value.trim()) {
+                        password.classList.add('is-invalid');
+                        isValid = false;
+                    } else {
+                        password.classList.remove('is-invalid');
+                    }
+
+                    if (!confirmPassword.value.trim() || confirmPassword.value !== password.value) {
+                        confirmPassword.classList.add('is-invalid');
+                        isValid = false;
+                    } else {
+                        confirmPassword.classList.remove('is-invalid');
+                    }
+
+                    if (!terms.checked) {
+                        terms.classList.add('is-invalid');
+                        isValid = false;
+                    } else {
+                        terms.classList.remove('is-invalid');
+                    }
+
+                    // Check profile photo (optional, but must be valid image if provided)
+                    if (profilePhoto.files.length > 0 && !profilePhoto.files[0].type.startsWith('image/')) {
+                        document.getElementById('photoInvalid').style.display = 'block';
+                        isValid = false;
+                    } else {
+                        document.getElementById('photoInvalid').style.display = 'none';
+                    }
+
+                    if (!isValid || !form.checkValidity()) {
+                        event.stopPropagation();
+                        form.classList.add('was-validated');
+                        console.log('Form validation failed');
+                        return;
+                    }
+
+                    console.log('Registration attempt with:', { 
+                        fullName: fullName.value, 
+                        email: email.value, 
+                        password: password.value, 
+                        profilePhoto: profilePhoto.files.length ? profilePhoto.files[0].name : 'None', 
+                        terms: terms.checked 
+                    });
+                    
+                    localStorage.setItem('isLoggedIn', 'true');
+                    isLoggedIn = true;
+                    if (profilePhoto.files.length > 0) {
+                        const reader = new FileReader();
+                        reader.onload = function(e) {
+                            localStorage.setItem('profilePhoto', e.target.result);
+                        };
+                        reader.readAsDataURL(profilePhoto.files[0]);
+                    }
+                    populateUserMenu();
+                    
+                    alert('Registration successful! Redirecting...');
+                    window.location.href = 'index.html';
+                });
+            } else {
+                console.error('Register form element not found');
+            }
+
+            const newsletterForm = document.getElementById('newsletterForm');
+            if (newsletterForm) {
+                newsletterForm.addEventListener('submit', (e) => {
+                    e.preventDefault();
+                    const emailInput = document.getElementById('newsletterEmail');
+                    const email = emailInput.value;
+                    if (email && /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+                        localStorage.setItem('newsletterEmail', email);
+                        alert('Subscribed to newsletter successfully!');
+                        emailInput.value = '';
+                    } else {
+                        alert('Please enter a valid email address.');
+                    }
+                });
+            }
+        });
+    </script>
+    <style>
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .social-btn:hover {
+            transform: scale(1.05);
+        }
+        .social-btn:has(.fa-google):hover {
+            background-color: #db4437;
+        }
+        .social-btn:has(.fa-google):hover i {
+            color: white;
+        }
+        .social-btn:has(.fa-facebook-f):hover {
+            background-color: #3b5998;
+        }
+        .social-btn:has(.fa-facebook-f):hover i {
+            color: white;
+        }
+        .social-btn:has(.fa-apple):hover {
+            background-color: #000000;
+        }
+        .social-btn:has(.fa-apple):hover i {
+            color: white;
+        }
+    </style>
+</body>
+</html>

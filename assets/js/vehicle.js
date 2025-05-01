@@ -30,8 +30,20 @@ function generateVehicleDetails(vehicle) {
         vehicle.coordinates.lng
     ).toFixed(2);
 
-    return `
-        <div class="action-buttons">
+    const detailsHtml = `
+        <div class="vehicle-details">
+            <h6 class="mb-2">${vehicle.model}</h6>
+            <p class="mb-1 small"><strong>Price:</strong> ${vehicle.price}</p>
+            <p class="mb-1 small"><strong>Distance:</strong> ${distance} km</p>
+            <p class="mb-1 small"><strong>Location:</strong> ${vehicle.location}</p>
+            <p class="mb-1 small"><strong>Plate:</strong> ${vehicle.plate}</p>
+            <p class="mb-1 small"><strong>Odometer:</strong> ${vehicle.reading}</p>
+            <p class="mb-1 small"><strong>Type:</strong> ${vehicle.type}</p>
+            <p class="availability small ${vehicle.available ? 'text-success' : 'text-danger'} mb-3">
+                ${vehicle.available ? 'Available Now' : 'Booked'}
+            </p>
+        </div>
+        <div class="action-buttons mt-3">
             <button class="btn btn-action like-btn" data-id="${vehicle.id}">
                 <i class="${likedVehicles.includes(vehicle.id) ? 'fas' : 'far'} fa-heart"></i>
             </button>
@@ -42,19 +54,12 @@ function generateVehicleDetails(vehicle) {
                 <i class="fas fa-map-marker-alt"></i>
             </button>
         </div>
-        <div class="vehicle-details">
-            <h6 class="mb-2">${vehicle.model}</h6>
-            <p class="mb-1 small"><strong>Price:</strong> ${vehicle.price}</p>
-            <p class="mb-1 small"><strong>Distance:</strong> ${distance} km</p>
-            <p class="mb-1 small"><strong>Location:</strong> ${vehicle.location}</p>
-            <p class="mb-1 small"><strong>Plate:</strong> ${vehicle.plate}</p>
-            <p class="mb-1 small"><strong>Odometer:</strong> ${vehicle.reading}</p>
-            <p class="mb-1 small"><strong>Type:</strong> ${vehicle.type}</p>
-            <p class="availability small ${vehicle.available ? 'text-success' : 'text-danger'} mb-0">
-                ${vehicle.available ? 'Available Now' : 'Booked'}
-            </p>
-        </div>
     `;
+    
+    // Debug: Log the generated HTML to verify order
+    console.log('Generated vehicle details HTML:', detailsHtml);
+    
+    return detailsHtml;
 }
 
 function generateRecommendedCard(vehicle) {
@@ -104,33 +109,47 @@ document.addEventListener('DOMContentLoaded', () => {
         vehicleDetailsContent.innerHTML = '';
         recommendedVehicles.innerHTML = '';
 
-        // Populate carousel
+        // Validate images array
+        if (!Array.isArray(vehicle.images) || vehicle.images.length < 3) {
+            console.error(`Invalid images for vehicle ID ${vehicleId}:`, vehicle.images);
+            vehicle.images = [
+                'https://via.placeholder.com/800x600?text=Image+1+Not+Available',
+                'https://via.placeholder.com/800x600?text=Image+2+Not+Available',
+                'https://via.placeholder.com/800x600?text=Image+3+Not+Available'
+            ];
+        }
+
+        // Populate carousel with vehicle-specific images
         vehicle.images.forEach((image, index) => {
             const carouselItem = document.createElement('div');
             carouselItem.className = `carousel-item ${index === 0 ? 'active' : ''}`;
             carouselItem.innerHTML = `
-                <img src="${image}" class="d-block w-100 vehicle-image" alt="${vehicle.model}" loading="lazy">
+                <img src="${image}" class="d-block w-100 vehicle-image" alt="${vehicle.model} image ${index + 1}" loading="lazy">
             `;
             carouselInner.appendChild(carouselItem);
         });
 
-        // If no images, show placeholder
-        if (vehicle.images.length === 0) {
-            carouselInner.innerHTML = `
-                <div class="carousel-item active">
-                    <img src="https://via.placeholder.com/800x600" class="d-block w-100 vehicle-image" alt="No image available">
-                </div>
-            `;
-        }
-
         // Populate details
         vehicleDetailsContent.innerHTML = generateVehicleDetails(vehicle);
 
-        // Recommended vehicles
-        const otherVehicles = vehicles.filter(v => v.id !== vehicleId).slice(0, 5);
-        otherVehicles.forEach(v => {
-            recommendedVehicles.appendChild(generateRecommendedCard(v));
-        });
+        // Debug: Verify DOM order after rendering
+        console.log('Rendered vehicleDetailsContent HTML:', vehicleDetailsContent.innerHTML);
+
+        // Recommended vehicles (same type, exclude current vehicle)
+        const otherVehicles = vehicles
+            .filter(v => v.id !== vehicleId && v.type === vehicle.type)
+            .slice(0, 5);
+        if (otherVehicles.length > 0) {
+            otherVehicles.forEach(v => {
+                recommendedVehicles.appendChild(generateRecommendedCard(v));
+            });
+        } else {
+            recommendedVehicles.innerHTML = `
+                <div class="col-12 text-center py-3">
+                    <p>No similar vehicles available</p>
+                </div>
+            `;
+        }
 
         // Navigation for recommended vehicles
         recommendedVehicles.querySelectorAll('.vehicle-card').forEach(card => {
@@ -138,15 +157,10 @@ document.addEventListener('DOMContentLoaded', () => {
                 if (!e.target.closest('.btn-action')) {
                     const id = parseInt(card.dataset.id);
                     if (id) {
-                        window.location.href = `vehicle.html?id=${id}`;
+                        window.location.href = `./vehicle.html?id=${id}`;
                     }
                 }
             });
-        });
-
-        // Book Now button
-        document.querySelector('.book-now-btn').addEventListener('click', () => {
-            alert(`Booking initiated for ${vehicle.model}`);
         });
 
         // View on Map button
@@ -154,13 +168,17 @@ document.addEventListener('DOMContentLoaded', () => {
             const googleMapsUrl = `https://www.google.com/maps?q=${vehicle.coordinates.lat},${vehicle.coordinates.lng}`;
             window.open(googleMapsUrl, '_blank');
         });
-    } else if (vehicleDetail) {
-        vehicleDetail.innerHTML = `
-            <div class="col-12 text-center py-5">
-                <h4>Vehicle not found</h4>
-                <p>Please try another vehicle</p>
-            </div>
-        `;
+    } else {
+        console.error('Vehicle not found or DOM elements missing:', { vehicleId, vehicle });
+        if (vehicleDetail) {
+            vehicleDetail.innerHTML = `
+                <div class="col-12 text-center py-5">
+                    <h4>Vehicle not found</h4>
+                    <p>Please try another vehicle</p>
+                    <a href="../index.html" class="btn btn-primary">Back to Home</a>
+                </div>
+            `;
+        }
     }
 
     // Action buttons for main vehicle and recommended vehicles

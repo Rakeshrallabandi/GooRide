@@ -3,19 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Logout - Goo Ride</title>
+    <title>History - Goo Ride</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="../assets/css/styles.css">
 </head>
 <body>
-    <!-- Header Section -->
+    
     <header class="header sticky-top">
         <nav class="navbar navbar-dark bg-dark py-2">
             <div class="container">
                 <div class="d-flex align-items-center w-100 gap-3">
-                    <a class="navbar-brand me-3" href="index.html" onclick="resetFilters()">GOO RIDE</a>
-                    <a href="index.html" class="home-btn text-white" onclick="resetFilters()">
+                    <a class="navbar-brand me-3" href="../index.html">GOO RIDE</a>
+                    <a href="../index.html" class="home-btn text-white">
                         <i class="fas fa-home fs-4"></i>
                     </a>
                     <div class="flex-grow-1"></div>
@@ -28,6 +28,7 @@
                             <li><a class="dropdown-item" href="posts.html"><i class="fas fa-list me-2"></i>My Posts</a></li>
                             <li><a class="dropdown-item" href="likes.html"><i class="fas fa-heart me-2"></i>Likes</a></li>
                             <li><a class="dropdown-item" href="saved.html"><i class="fas fa-bookmark me-2"></i>Saved</a></li>
+                            <li><a class="dropdown-item" href="chats.html"><i class="fas fa-comment me-2"></i>Chats</a></li>
                             <li><a class="dropdown-item" href="history.html"><i class="fas fa-history me-2"></i>History</a></li>
                             <li><a class="dropdown-item" href="notifications.html"><i class="fas fa-bell me-2"></i>Notifications</a></li>
                             <li><a class="dropdown-item" href="settings.html"><i class="fas fa-cog me-2"></i>Settings</a></li>
@@ -43,16 +44,46 @@
         </nav>
     </header>
 
-    <!-- Main Content -->
-    <main class="container py-5 text-center">
-        <div class="py-5">
-            <h2 class="mb-4">You have been logged out</h2>
-            <p class="lead mb-4">Thank you for using Goo Ride! You will be redirected to the homepage in <span id="countdown">3</span> seconds.</p>
-            <a href="index.html" class="btn btn-primary" onclick="resetFilters()">Go to Homepage Now</a>
+    <main class="container py-5">
+        <h2>Booking History</h2>
+        <div class="table-responsive">
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>Vehicle</th>
+                        <th>Plate</th>
+                        <th>Location</th>
+                        <th>Date</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Royal Enfield Classic 350</td>
+                        <td>MH01AB1234</td>
+                        <td>Mumbai Central</td>
+                        <td>2023-10-15</td>
+                        <td><span class="badge bg-success">Completed</span></td>
+                    </tr>
+                    <tr>
+                        <td>Honda Activa 6G</td>
+                        <td>DL03EF9012</td>
+                        <td>Delhi Metro Station</td>
+                        <td>2023-10-10</td>
+                        <td><span class="badge bg-success">Completed</span></td>
+                    </tr>
+                    <tr>
+                        <td>Bajaj Pulsar NS200</td>
+                        <td>KA02CD5678</td>
+                        <td>Bengaluru Tech Park</td>
+                        <td>2023-10-05</td>
+                        <td><span class="badge bg-warning">Cancelled</span></td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
     </main>
 
-    <!-- Footer -->
     <footer class="footer bg-dark text-white py-5">
         <div class="container">
             <div class="row">
@@ -84,7 +115,7 @@
                     </ul>
                 </div>
                 <div class="col-md-3">
-                    <h5>Newsletter</h5>
+                    <h5>News Letter</h5>
                     <div class="mb-3">
                         <input type="email" class="form-control" placeholder="Your Email">
                     </div>
@@ -97,15 +128,14 @@
                     <p class="mb-0">© 2023 Goo Ride. All rights reserved.</p>
                 </div>
                 <div class="col-md-6 text-center text-md-end">
-                    <a href="privacy-policy.html" class="text-white me-3">Privacy Policy</a>
-                    <a href="terms-of-service.html" class="text-white me-3">Terms of Service</a>
-                    <a href="faq.html" class="text-white">FAQ</a>
+                    <a href="../docs/privacy-policy.html" class="text-white me-3">Privacy Policy</a>
+                    <a href="../docs/terms-of-service.html" class="text-white me-3">Terms of Service</a>
+                    <a href="../docs/faq.html" class="text-white">FAQ</a>
                 </div>
             </div>
         </div>
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="logout.js"></script>
 </body>
 </html>

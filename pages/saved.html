@@ -6,7 +6,7 @@
     <title>Saved Vehicles - Goo Ride</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="../assets/css/styles.css">
 </head>
 <body>
     <!-- Header Section -->
@@ -14,8 +14,8 @@
         <nav class="navbar navbar-dark bg-dark py-2">
             <div class="container">
                 <div class="d-flex align-items-center w-100 gap-3">
-                    <a class="navbar-brand me-3" href="index.html">GOO RIDE</a>
-                    <a href="index.html" class="home-btn text-white">
+                    <a class="navbar-brand me-3" href="../index.html">GOO RIDE</a>
+                    <a href="../index.html" class="home-btn text-white">
                         <i class="fas fa-home fs-4"></i>
                     </a>
                     <div class="flex-grow-1"></div>
@@ -28,11 +28,12 @@
                             <li><a class="dropdown-item" href="posts.html"><i class="fas fa-list me-2"></i>My Posts</a></li>
                             <li><a class="dropdown-item" href="likes.html"><i class="fas fa-heart me-2"></i>Likes</a></li>
                             <li><a class="dropdown-item" href="saved.html"><i class="fas fa-bookmark me-2"></i>Saved</a></li>
+                            <li><a class="dropdown-item" href="chats.html"><i class="fas fa-comment me-2"></i>Chats</a></li>
                             <li><a class="dropdown-item" href="history.html"><i class="fas fa-history me-2"></i>History</a></li>
                             <li><a class="dropdown-item" href="notifications.html"><i class="fas fa-bell me-2"></i>Notifications</a></li>
                             <li><a class="dropdown-item" href="settings.html"><i class="fas fa-cog me-2"></i>Settings</a></li>
                             <li><a class="dropdown-item" href="language.html"><i class="fas fa-language me-2"></i>Language</a></li>
-                            <li><a class="dropdown-item" href="help.html"><i class="fas fa-question-circle me-2"></i>Help</a></li>
+                            <li><a class="dropdown-item" href="../docs/help.html"><i class="fas fa-question-circle me-2"></i>Help</a></li>
                             <li><a class="dropdown-item" href="install.html"><i class="fas fa-download me-2"></i>Install App</a></li>
                             <li><hr class="dropdown-divider"></li>
                             <li><a class="dropdown-item text-danger" href="logout.html"><i class="fas fa-sign-out-alt me-2"></i>Log Out</a></li>
@@ -109,7 +110,7 @@
                     </ul>
                 </div>
                 <div class="col-md-3">
-                    <h5>Newsletter</h5>
+                    <h5>News Letter</h5>
                     <form>
                         <div class="mb-3">
                             <input type="email" class="form-control" placeholder="Your Email" id="newsletterEmail">
@@ -124,9 +125,9 @@
                     <p class="mb-0">© 2025 Goo Ride. All rights reserved.</p>
                 </div>
                 <div class="col-md-6 text-center text-md-end">
-                    <a href="#" class="text-white me-3">Privacy Policy</a>
-                    <a href="#" class="text-white me-3">Terms of Service</a>
-                    <a href="help.html" class="text-white">FAQ</a>
+                    <a href="../docs/privacy-policy.html" class="text-white me-3">Privacy Policy</a>
+                    <a href="../docs/terms-of-service.html" class="text-white me-3">Terms of Service</a>
+                    <a href="../docs/faq.html" class="text-white">FAQ</a>
                 </div>
             </div>
         </div>
@@ -152,7 +153,7 @@
                     <div class="col-12 text-center py-5">
                         <h4>No saved vehicles</h4>
                         <p>You haven't saved any vehicles yet.</p>
-                        <a href="index.html" class="btn btn-primary">Browse Vehicles</a>
+                        <a href="../index.html" class="btn btn-primary">Browse Vehicles</a>
                     </div>
                 `;
                 return;
@@ -213,7 +214,7 @@
             document.querySelectorAll('.view-btn').forEach(btn => {
                 btn.addEventListener('click', (e) => {
                     const vehicleId = parseInt(e.currentTarget.dataset.id);
-                    window.location.href = `vehicle.html?id=${vehicleId}`;
+                    window.location.href = `pages/vehicle.html?id=${vehicleId}`;
                 });
             });
 
@@ -329,7 +330,7 @@
                 document.querySelectorAll('.view-btn').forEach(btn => {
                     btn.addEventListener('click', (e) => {
                         const vehicleId = parseInt(e.currentTarget.dataset.id);
-                        window.location.href = `vehicle.html?id=${vehicleId}`;
+                        window.location.href = `pages/vehicle.html?id=${vehicleId}`;
                     });
                 });
 

@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile - Goo Ride</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="../assets/css/styles.css">
+</head>
+<body>
+    <header class="header sticky-top">
+        <nav class="navbar navbar-dark bg-dark py-2">
+            <div class="container">
+                <div class="d-flex align-items-center w-100 gap-3">
+                    <a class="navbar-brand me-3" href="../index.html">GOO RIDE</a>
+                    <a href="../index.html" class="home-btn text-white">
+                        <i class="fas fa-home fs-4"></i>
+                    </a>
+                    <div class="flex-grow-1"></div>
+                    <div class="dropdown">
+                        <button class="btn btn-link text-white p-0" data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class="fas fa-user fs-4"></i>
+                        </button>
+                        <ul class="dropdown-menu dropdown-menu-end">
+                            <li><a class="dropdown-item" href="profile.html"><i class="fas fa-user me-2"></i>Profile</a></li>
+                            <li><a class="dropdown-item" href="posts.html"><i class="fas fa-list me-2"></i>My Posts</a></li>
+                            <li><a class="dropdown-item" href="likes.html"><i class="fas fa-heart me-2"></i>Likes</a></li>
+                            <li><a class="dropdown-item" href="saved.html"><i class="fas fa-bookmark me-2"></i>Saved</a></li>
+                            <li><a class="dropdown-item" href="chats.html"><i class="fas fa-comment me-2"></i>Chats</a></li>
+                            <li><a class="dropdown-item" href="history.html"><i class="fas fa-history me-2"></i>History</a></li>
+                            <li><a class="dropdown-item" href="notifications.html"><i class="fas fa-bell me-2"></i>Notifications</a></li>
+                            <li><a class="dropdown-item" href="settings.html"><i class="fas fa-cog me-2"></i>Settings</a></li>
+                            <li><a class="dropdown-item" href="language.html"><i class="fas fa-language me-2"></i>Language</a></li>
+                            <li><a class="dropdown-item" href="../docs/help.html"><i class="fas fa-question-circle me-2"></i>Help</a></li>
+                            <li><a class="dropdown-item" href="install.html"><i class="fas fa-download me-2"></i>Install App</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item text-danger" href="logout.html"><i class="fas fa-sign-out-alt me-2"></i>Log Out</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container py-5">
+        <h2>User Profile</h2>
+       
+            <div class="row">
+                <div class="col-md-4 text-center">
+                    <img src="https://img.freepik.com/premium-photo/3d-pixar-character-design-zhou-with-glasses-orange-hoodie_899449-256810.jpg?ga=GA1.1.1552807996.1689011755&semt=ais_hybrid&w=740" class="rounded-circle mb-3" alt="Profile Picture" id="profilePic" style="width: 150px; height: 150px;">
+                    <div class="dropdown mb-3">
+                        <button class="btn btn-primary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Change Picture
+                        </button>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#avatarModal">Select Avatar</a></li>
+                            <li><a class="dropdown-item" href="#" onclick="document.getElementById('galleryInput').click()">Choose from Gallery</a></li>
+                            <li><a class="dropdown-item" href="#" onclick="triggerCamera()">Take from Camera</a></li>
+                        </ul>
+                    </div>
+                    <input type="file" id="galleryInput" accept="image/*" style="display: none;" onchange="previewImage(event)">
+                    <input type="file" id="cameraInput" accept="image/*" capture="environment" style="display: none;" onchange="previewImage(event)">
+                    <div class="form-check form-switch">
+                        <input class="form-check-input" type="checkbox" id="profileVisibility" checked>
+                        <label class="form-check-label" for="profileVisibility">Public Profile</label>
+                    </div>
+                </div>
+                <div class="col-md-8">
+                    <h4>Personal Information</h4>
+                    <div class="row mb-3">
+                        <div class="col">
+                            <label class="form-label">First Name <span class="text-danger">*</span></label>
+                            <input type="text" class="form-control" value="John">
+                        </div>
+                        <div class="col">
+                            <label class="form-label">Middle Name</label>
+                            <input type="text" class="form-control" value="">
+                        </div>
+                        <div class="col">
+                            <label class="form-label">Last Name <span class="text-danger">*</span></label>
+                            <input type="text" class="form-control" value="Doe">
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Email</label>
+                        <input type="email" class="form-control" value="john.doe@example.com">
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Phone Number <span class="text-danger">*</span></label>
+                        <div class="input-group">
+                            <select class="form-select" style="max-width: 150px;">
+                                <option value="+91">+91 (India)</option>
+                                <option value="+1">+1 (USA)</option>
+                                <option value="+44">+44 (UK)</option>
+                                <option value="+61">+61 (Australia)</option>
+                            </select>
+                            <input type="tel" class="form-control" value="9876543210" id="phoneNumber">
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">WhatsApp Number</label>
+                        <div class="input-group">
+                            <select class="form-select" style="max-width: 150px;">
+                                <option value="+91">+91 (India)</option>
+                                <option value="+1">+1 (USA)</option>
+                                <option value="+44">+44 (UK)</option>
+                                <option value="+61">+61 (Australia)</option>
+                            </select>
+                            <input type="tel" class="form-control" id="whatsappNumber">
+                            <div class="form-check ms-2">
+                                <input class="form-check-input" type="checkbox" id="sameAsPhone" onclick="copyPhoneNumber()">
+                                <label class="form-check-label" for="sameAsPhone">Same as Phone</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Location</label>
+                        <div class="input-group">
+                            <input type="text" class="form-control" placeholder="Select your location">
+                            <button class="btn btn-outline-secondary" type="button" onclick="openGoogleMaps()">Select from Google Maps</button>
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Social Media Profiles</label>
+                        <div class="input-group mb-2">
+                            <span class="input-group-text"><i class="fab fa-facebook-f"></i></span>
+                            <input type="url" class="form-control" placeholder="Facebook URL">
+                        </div>
+                        <div class="input-group mb-2">
+                            <span class="input-group-text"><i class="fab fa-twitter"></i></span>
+                            <input type="url" class="form-control" placeholder="Twitter URL">
+                        </div>
+                        <div class="input-group mb-2">
+                            <span class="input-group-text"><i class="fab fa-instagram"></i></span>
+                            <input type="url" class="form-control" placeholder="Instagram URL">
+                        </div>
+                        <div class="input-group">
+                            <span class="input-group-text"><i class="fab fa-linkedin-in"></i></span>
+                            <input type="url" class="form-control" placeholder="LinkedIn URL">
+                        </div>
+                    </div>
+                    <button class="btn btn-primary">Save Changes</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Avatar Selection Modal -->
+        <div class="modal fade" id="avatarModal" tabindex="-1" aria-labelledby="avatarModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="avatarModalLabel">Select Avatar</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="row">
+                            <div class="col-4 text-center">
+                                <img src="https://img.freepik.com/free-vector/smiling-young-man-illustration_1308-174669.jpg?ga=GA1.1.1552807996.1689011755&semt=ais_hybrid&w=740" class="rounded-circle mb-2 avatar-option" alt="Avatar 1" onclick="selectAvatar(this.src)" style="width: 100px; height: 100px;">
+                            </div>
+                            <div class="col-4 text-center">
+                                <img src="https://img.freepik.com/premium-vector/people-profile-icon_24877-40756.jpg?ga=GA1.1.1552807996.1689011755&semt=ais_hybrid&w=740" class="rounded-circle mb-2 avatar-option" alt="Avatar 2" onclick="selectAvatar(this.src)" style="width: 100px; height: 100px;">
+                            </div>
+                            <div class="col-4 text-center">
+                                <img src="https://img.freepik.com/free-photo/androgynous-avatar-non-binary-queer-person_23-2151100226.jpg?ga=GA1.1.1552807996.1689011755&semt=ais_hybrid&w=740" class="rounded-circle mb-2 avatar-option" alt="Robot 1" onclick="selectAvatar(this.src)" style="width: 100px; height: 100px;">
+                            </div>
+                            <div class="col-4 text-center">
+                                <img src="https://img.freepik.com/premium-psd/smiling-3d-cartoon-man-avatar_975163-755.jpg?ga=GA1.1.1552807996.1689011755&semt=ais_hybrid&w=740" class="rounded-circle mb-2 avatar-option" alt="Robot 2" onclick="selectAvatar(this.src)" style="width: 100px; height: 100px;">
+                            </div>
+                            <div class="col-4 text-center">
+                                <img src="https://img.freepik.com/free-vector/woman-floral-traditional-costume_1308-176159.jpg?ga=GA1.1.1552807996.1689011755&semt=ais_hybrid&w=740" class="rounded-circle mb-2 avatar-option" alt="Hero 1" onclick="selectAvatar(this.src)" style="width: 100px; height: 100px;">
+                            </div>
+                            <div class="col-4 text-center">
+                                <img src="https://img.freepik.com/premium-photo/png-smiling-woman-paper-craft-collage-element-transparent-background_53876-941756.jpg?ga=GA1.1.1552807996.1689011755&semt=ais_hybrid&w=740" class="rounded-circle mb-2 avatar-option" alt="Hero 2" onclick="selectAvatar(this.src)" style="width: 100px; height: 100px;">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footerSVC bg-dark text-white py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 mb-4 mb-md-0">
+                    <h5>Goo Ride</h5>
+                    <p>Your trusted partner for bike rentals across India.</p>
+                    <div class="social-links">
+                        <a href="#" class="text-white me-2"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="text-white me-2"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="text-white me-2"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="text-white"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="col-md-2 mb-4 mb-md-0">
+                    <h5>Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="index.html" class="text-white">Home</a></li>
+                        <li><a href="index.html" class="text-white">Vehicles</a></li>
+                        <li><a href="#" class="text-white">Pricing</a></li>
+                        <li><a href="#" class="text-white">Locations</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3 mb-4 mb-md-0">
+                    <h5>Contact Us</h5>
+                    <ul class="list-unstyled">
+                        <li><i class="fas fa-map-marker-alt me-2"></i> 123 Street, Mumbai</li>
+                        <li><i class="fas fa-phone me-2"></i> +91 9876543210</li>
+                        <li><i class="fas fa-envelope me-2"></i> info@goodride.com</li>
+                    </ul>
+                </div>
+                <div class="col-md-3">
+                    <h5>News Letter</h5>
+                    <div class="mb-3">
+                        <input type="email" class="form-control" placeholder="Your Email">
+                    </div>
+                    <button type="submit" class="btn btn-primary">Subscribe</button>
+                </div>
+            </div>
+            <hr class="my-4 bg-light">
+            <div class="row">
+                <div class="col-md-6 text-center text-md-start">
+                    <p class="mb-0">© 2023 Goo Ride. All rights reserved.</p>
+                </div>
+                <div class="col-md-6 text-center text-md-end">
+                    <a href="../docs/privacy-policy.html" class="text-white me-3">Privacy Policy</a>
+                    <a href="../docs/terms-of-service.html" class="text-white me-3">Terms of Service</a>
+                    <a href="../docs/faq.html" class="text-white">FAQ</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Initialize Bootstrap dropdowns
+        document.addEventListener('DOMContentLoaded', function () {
+            var dropdowns = document.querySelectorAll('.dropdown-toggle');
+            dropdowns.forEach(function (dropdown) {
+                new bootstrap.Dropdown(dropdown);
+            });
+        });
+
+        function copyPhoneNumber() {
+            const checkbox = document.getElementById('sameAsPhone');
+            const phoneNumber = document.getElementById('phoneNumber').value;
+            const whatsappNumber = document.getElementById('whatsappNumber');
+            if (checkbox.checked) {
+                whatsappNumber.value = phoneNumber;
+                whatsappNumber.disabled = true;
+            } else {
+                whatsappNumber.value = '';
+                whatsappNumber.disabled = false;
+            }
+        }
+
+        function openGoogleMaps() {
+            alert('Google Maps integration would be implemented here.');
+        }
+
+        function triggerCamera() {
+            alert('Opening camera. Note: Some devices may open the gallery instead due to browser limitations.');
+            document.getElementById('cameraInput').click();
+        }
+
+        function selectAvatar(src) {
+            const profilePic = document.getElementById('profilePic');
+            profilePic.src = src;
+            const modal = bootstrap.Modal.getInstance(document.getElementById('avatarModal'));
+            modal.hide();
+        }
+
+        function previewImage(event) {
+            const profilePic = document.getElementById('profilePic');
+            const file = event.target.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    profilePic.src = e.target.result;
+                };
+                reader.readAsDataURL(file);
+            }
+        }
+    </script>
+</body>
+</html>

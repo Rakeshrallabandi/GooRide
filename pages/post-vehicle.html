@@ -3,19 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Goo Ride - Vehicle Details</title>
+    <title>Goo Ride - Post a Vehicle</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <!-- Google Maps API with Places and Geocoding -->
+    <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&libraries=places"></script>
 </head>
 <body>
-    <!-- Header Section -->
     <header class="header sticky-top">
         <nav class="navbar navbar-dark bg-dark py-2">
             <div class="container">
                 <div class="d-flex align-items-center w-100 gap-4">
-                    <a class="navbar-brand" href="index.html" onclick="resetFilters()">GOO RIDE</a>
-                    <a href="index.html" class="home-btn text-white" onclick="resetFilters()">
+                    <a class="navbar-brand" href="../index.html" onclick="resetFilters()">GOO RIDE</a>
+                    <a href="../index.html" class="home-btn text-white" onclick="resetFilters()">
                         <i class="fas fa-home fs-4"></i>
                     </a>
                     <div class="flex-grow-1">
@@ -44,36 +45,87 @@
             </div>
         </nav>
     </header>
-
-    <!-- Main Content -->
     <main class="main-content">
         <div class="container py-4">
-            <div id="vehicleDetail" class="row mb-4">
-                <div class="col-md-9 vehicle-photos">
-                    <div id="vehiclePhotoCarousel" class="carousel slide" data-bs-ride="carousel">
-                        <div class="carousel-inner"></div>
-                        <button class="carousel-control-prev" type="button" data-bs-target="#vehiclePhotoCarousel" data-bs-slide="prev">
-                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                            <span class="visually-hidden">Previous</span>
-                        </button>
-                        <button class="carousel-control-next" type="button" data-bs-target="#vehiclePhotoCarousel" data-bs-slide="next">
-                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                            <span class="visually-hidden">Next</span>
+            <h2 class="mb-4">Post a New Vehicle</h2>
+            <form id="postVehicleForm" class="row g-3">
+                <div class="col-md-6">
+                    <label for="brand" class="form-label">Vehicle Brand</label>
+                    <input type="text" class="form-control" id="brand" placeholder="e.g., Yamaha">
+                </div>
+                <div class="col-md-6">
+                    <label for="model" class="form-label">Vehicle Model <span class="text-danger">*</span></label>
+                    <input type="text" class="form-control" id="model" placeholder="e.g., MT-15" required>
+                </div>
+                <div class="col-md-6">
+                    <label for="plate" class="form-label">License Plate <span class="text-danger">*</span></label>
+                    <input type="text" class="form-control" id="plate" placeholder="e.g., TN12XY7890" required>
+                </div>
+                <div class="col-md-6">
+                    <label for="location" class="form-label">Location <span class="text-danger">*</span></label>
+                    <div class="input-group">
+                        <input type="text" class="form-control" id="location" placeholder="Search for a location" required>
+                        <button type="button" class="btn btn-outline-primary" id="getCurrentLocation">
+                            <i class="fas fa-map-marker-alt"></i> Get Current Location
                         </button>
                     </div>
                 </div>
-                <div class="col-md-2 vehicle-card-detail d-flex flex-column">
-                    <div id="vehicleDetailsContent" class="p-3 flex-grow-1"></div>
-                    <button class="btn btn-primary w-100 mt-3 book-now-btn">Book Now</button>
-                    <button class="btn btn-outline-primary w-100 mt-2 view-map-btn">View on Map</button>
+                <!-- <div class="col-12">
+                    <div id="map" style="height: 300px; margin-top: 10px;"></div>
+                </div> -->
+                <div class="col-md-6">
+                    <label for="year" class="form-label">Year of Manufacture</label>
+                    <input type="number" class="form-control" id="year" placeholder="e.g., 2022" min="1900" max="2025">
                 </div>
-            </div>
-            <h3 class="mb-4">Recommended Vehicles</h3>
-            <div class="d-flex flex-row flex-nowrap overflow-auto gap-3" id="recommendedVehicles"></div>
+                <div class="col-md-6">
+                    <label for="reading" class="form-label">Odometer Reading</label>
+                    <input type="text" class="form-control" id="reading" placeholder="e.g., 5000 km">
+                </div>
+                <div class="col-md-6">
+                    <label for="type" class="form-label">Vehicle Type</label>
+                    <select class="form-select" id="type">
+                        <option value="" disabled selected>Select type</option>
+                        <option value="motorcycle">Motorcycle</option>
+                        <option value="scooter">Scooter</option>
+                        <option value="bicycle">Bicycle</option>
+                    </select>
+                </div>
+                <div class="col-md-6">
+                    <label for="fuel" class="form-label">Fuel Type</label>
+                    <select class="form-select" id="fuel">
+                        <option value="" disabled selected>Select fuel type</option>
+                        <option value="petrol">Petrol</option>
+                        <option value="diesel">Diesel</option>
+                        <option value="electric">Electric</option>
+                    </select>
+                </div>
+                <div class="col-md-6">
+                    <label for="price" class="form-label">Price (per day)</label>
+                    <input type="text" class="form-control" id="price" placeholder="e.g., 1200/day">
+                </div>
+                <div class="col-md-6">
+                    <label for="available" class="form-label">Availability</label>
+                    <div>
+                        <input type="checkbox" id="available" checked>
+                        <label for="available" class="ms-2">Available for rent</label>
+                    </div>
+                </div>
+                <div class="col-12">
+                    <label for="description" class="form-label">Description</label>
+                    <textarea class="form-control" id="description" placeholder="e.g., Well-maintained, ideal for city rides" rows="4"></textarea>
+                </div>
+                <div class="col-12">
+                    <label for="images" class="form-label">Upload Images <span class="text-danger">*</span></label>
+                    <input type="file" class="form-control" id="images" accept="image/*" multiple required>
+                    <small class="form-text text-muted">Select one or more images. Large images may fill up storage.</small>
+                </div>
+                <div class="col-12">
+                    <button type="submit" class="btn btn-primary">Post Vehicle</button>
+                    <button type="reset" class="btn btn-outline-secondary ms-2">Reset</button>
+                </div>
+            </form>
         </div>
     </main>
-
-    <!-- Footer -->
     <footer class="footer bg-dark text-white py-5">
         <div class="container">
             <div class="row">
@@ -90,8 +142,8 @@
                 <div class="col-md-2 mb-4 mb-md-0">
                     <h5>Quick Links</h5>
                     <ul class="list-unstyled">
-                        <li><a href="index.html" class="text-white">Home</a></li>
-                        <li><a href="index.html" class="text-white">Vehicles</a></li>
+                        <li><a href="../index.html" class="text-white">Home</a></li>
+                        <li><a href="../index.html" class="text-white">Vehicles</a></li>
                         <li><a href="#" class="text-white">Pricing</a></li>
                         <li><a href="#" class="text-white">Locations</a></li>
                     </ul>
@@ -125,8 +177,7 @@
             </div>
         </div>
     </footer>
-
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="vehicle.js"></script>
+    <script src="../assets/js/post-vehicle.js"></script>
 </body>
 </html>

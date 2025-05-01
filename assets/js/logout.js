@@ -19,7 +19,7 @@ document.addEventListener('DOMContentLoaded', () => {
         countdownElement.textContent = countdown;
         if (countdown <= 0) {
             clearInterval(interval);
-            window.location.href = 'index.html';
+            window.location.href = '../index.html';
         }
     }, 1000);
 });
