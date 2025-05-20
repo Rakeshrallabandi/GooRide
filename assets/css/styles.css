@@ -1,512 +1,519 @@
 h1{
-    color: #0d6efd;
-}
-:root {
-    --primary-color: #0d6efd;
-    --secondary-color: #6c757d;
-    --success-color: #198754;
-    --danger-color: #dc3545;
-    --transition-speed: 0.3s;
-}
-
-body {
-    font-family: 'Arial', sans-serif;
-    /* background-color: #3787d2; */
-    overflow-x: hidden;
-    background-size:cover;
-    background-image: url("https://i.pinimg.com/736x/2b/b5/d1/2bb5d1a05d4e621d999c3090a997817b.jpg");
-    margin: 0;
-    flex-wrap: nowrap;
-}
-
-.header {
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    z-index: 1000;
-}
-
-.navbar-brand {
-    font-size: 1.5rem;
-    font-weight: bold;
-}
-
-.search-bar {
-    width: 100%;
-    padding: 0.5rem;
-    border-radius: 0.25rem;
-    border: 1px solid #ced4da;
-    font-size: 0.9rem;
-    z-index: 1;
-}
-
-.navbar .dropdown {
-    position: relative;
-}
-
-.navbar .dropdown-menu {
-    z-index: 1100;
-    margin-top: 0.75rem;
-    border-radius: 8px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-    min-width: 200px;
-    padding: 0.5rem 0;
-}
-
-.navbar .dropdown-menu .dropdown-item {
-    padding: 0.5rem 1rem;
-    font-size: 0.9rem;
-}
-
-.navbar .dropdown-menu .dropdown-item:hover {
-    background-color: var(--primary-color);
-    color: white;
-}
-
-.filter-section {
-    background-color: #fff;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    z-index: 900;
-}
-
-.location-search {
-    z-index: 1;
-}
-
-.vehicle-card {
-    background: white;
-    border: 1px solid #e0e0e0;
-    border-radius: 8px;
-    overflow: hidden;
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
-    cursor: pointer;
-    width: 220px;
-}
-
-.vehicle-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-    border-color: var(--primary-color);
-}
-
-.vehicle-card-detail {
-    background: #f0f8ff;
-    width: 220px;
-    border-radius:10px;
-}
-
-.vehicle-image {
-    height: 120px;
-    object-fit: cover;
-}
-
-.vehicle-details {
-    padding: 0.75rem;
-    font-size: 1.05rem;
-}
-
-.vehicle-details h6 {
-    font-size: 1rem;
-    margin-bottom: 0.5rem;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-}
-
-.vehicle-details p {
-    margin: 0 0 0.3rem;
-    color: #333;
-}
-
-.availability {
-    font-weight: bold;
-}
-
-.action-buttons {
-    position: absolute;
-    top: 8px;
-    right: 8px;
-    display: flex;
-    flex-direction: column;
-    gap: 6px;
-}
-
-.btn-action {
-    background: rgba(255, 255, 255, 0.9);
-    border: none;
-    padding: 6px;
-    border-radius: 50%;
-    font-size: 0.9rem;
-    line-height: 1;
-    transition: background-color var(--transition-speed) ease;
-}
-
-.btn-action:hover {
-    background: var(--primary-color);
-    color: white;
-}
-
-.coupon-card {
-    background: white;
-    border-radius: 8px;
-    transition: transform var(--transition-speed) ease;
-}
-
-.coupon-card:hover {
-    transform: translateY(-5px);
-}
-
-.footer {
-    background: #343a40;
-}
-
-.footer a {
-    text-decoration: none;
-}
-
-.footer a:hover {
-    text-decoration: underline;
-}
-
-.overflow-auto::-webkit-scrollbar {
-    height: 8px;
-}
-
-.overflow-auto::-webkit-scrollbar-thumb {
-    background: var(--secondary-color);
-    border-radius: 4px;
-}
-
-.overflow-auto::-webkit-scrollbar-track {
-    background: #f1f1f1;
-}
-
-@media (max-width: 767px) {
-    .vehicle-card, .vehicle-card-detail {
-        width: 200px;
-    }
-
-    .navbar .dropdown-menu {
-        min-width: 180px;
-        margin-top: 0.5rem;
-        right: 0;
-    }
-
-    .search-bar, .location-search {
-        font-size: 0.85rem;
-    }
-}
-.vehicle-photos {
-    height: 500px; /* Increase from 400px to 500px for desktop */
-}
-
-.vehicle-photos .carousel-inner img {
-    height: 500px; /* Match the increased height */
-}
-
-.vehicle-card-detail {
-    min-height: 500px; /* Match carousel height for details container */
-}
-
-@media (max-width: 767px) {
-    .vehicle-photos {
-        height: 350px; /* Increase from 300px to 350px for mobile */
-    }
-
-    .vehicle-photos .carousel-inner img {
-        height: 350px; /* Match mobile height */
-    }
-
-    .vehicle-card-detail {
-        min-height: 350px; /* Match mobile carousel height */
-    }
-}
-
-/* install css */
-.install-section {
-    padding: 40px 0;
-    /* background-color: #bbdefb; Slightly darker blue */
-    border-radius: 10px;
-    margin: 20px 0;
-}
-
-.install-section img.app-image {
-    max-width: 100%;
-    height: auto;
-    border-radius: 10px;
-}
-
-.install-section .btn {
-    border-radius: 20px;
-    padding: 10px 20px;
-    font-size: 1.1rem;
-    transition: transform 0.2s;
-}
-
-.install-section .btn:hover {
-    transform: scale(1.05);
-}
-
-.install-section .btn i {
-    margin-right: 8px;
-}
-
-.install-section .store-badge {
-    max-width: 150px;
-    margin: 10px;
-    transition: transform 0.2s;
-}
-
-.install-section .store-badge:hover {
-    transform: scale(1.1);
-}
-
-.install-section .feature-item {
-    font-size: 1rem;
-    margin-bottom: 10px;
-}
-
-.install-section .feature-item i {
-    color: #007bff;
-    margin-right: 10px;
-}
-
-/* Footer Styles */
-.footer {
-    background-color: #212529;
-}
-
-.footer h5 {
-    font-size: 1.25rem;
-    margin-bottom: 15px;
-}
-
-.footer a {
-    text-decoration: none;
-}
-
-.footer a:hover {
-    text-decoration: underline;
-}
-
-.social-links a {
-    font-size: 1.2rem;
-    transition: color 0.2s;
-}
-
-.social-links a:hover {
-    color: #007bff;
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-    .navbar-brand {
-        font-size: 1.2rem;
-    }
-
-    .search-bar {
-        font-size: 0.9rem;
-    }
-
-    .install-section {
-        margin: 10px 0;
-        padding: 20px 0;
-    }
-
-    .install-section .btn {
-        font-size: 1rem;
-        padding: 8px 15px;
-    }
-
-    .install-section .store-badge {
-        max-width: 120px;
-    }
-}
-/* logout css */
-.login-container {
-    max-width: 500px;
-    margin: 0 auto;
-    padding: 2rem;
-    border-radius: 10px;
-    box-shadow: 0 0 20px rgba(0,0,0,0.1);
-    background-color: white;
-}
-.login-header {
-    text-align: center;
-    margin-bottom: 2rem;
-}
-.form-floating {
-    margin-bottom: 1.5rem;
-}
-.btn-login {
-    width: 100%;
-    padding: 0.75rem;
-    font-size: 1.1rem;
-}
-.divider {
-    display: flex;
-    align-items: center;
-    margin: 1.5rem 0;
-}
-.divider::before, .divider::after {
-    content: "";
-    flex: 1;
-    border-bottom: 1px solid #dee2e6;
-}
-.divider-text {
-    padding: 0 1rem;
-    color: #6c757d;
-}
-.social-login {
-    display: flex;
-    justify-content: center;
-    gap: 1rem;
-    margin-bottom: 1.5rem;
-}
-.social-btn {
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1.25rem;
-}
-/* chat css */
-.chat-container {
-    height: calc(100vh - 120px);
-    display: flex;
-    flex-direction: column;
-    /* background-color: #e5ddd5; Plain WhatsApp-like background */
-}
-.chat-header {
-    background-color: #075e54;
-    color: white;
-    padding: 10px 15px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-}
-.chat-header .profile-pic {
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    margin-right: 10px;
-}
-.chat-messages {
-    flex-grow: 1;
-    overflow-y: auto;
-    padding: 15px;
-}
-.message {
-    margin-bottom: 10px;
-    max-width: 75%;
-    position: relative;
-    padding: 8px 12px;
-    border-radius: 7.5px;
-    line-height: 1.4;
-}
-.message.sent {
-    margin-left: auto;
-    background-color: #d9fdd3;
-    border-bottom-right-radius: 2px;
-}
-.message.received {
-    margin-right: auto;
-    background-color: #ffffff;
-    border-bottom-left-radius: 2px;
-    box-shadow: 0 1px 0.5px rgba(0,0,0,0.13);
-}
-.message::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    width: 10px;
-    height: 10px;
-    background: inherit;
-    clip-path: polygon(0 0, 100% 100%, 0 100%);
-}
-.message.sent::after {
-    right: -10px;
-    transform: rotate(90deg);
-}
-.message.received::after {
-    left: -10px;
-    transform: rotate(-90deg);
-}
-.message-time {
-    font-size: 0.7rem;
-    color: #666;
-    margin-top: 3px;
-    text-align: right;
-}
-.chat-input {
-    display: flex;
-    align-items: center;
-    padding: 8px 10px;
-    background-color: #f0f0f0;
-    border-top: 1px solid #d9d9d9;
-}
-.chat-input input {
-    flex-grow: 1;
-    margin: 0 8px;
-    border-radius: 20px;
-    padding: 8px 15px;
-    border: none;
-}
-.emoji-picker {
-    display: none;
-    position: absolute;
-    bottom: 60px;
-    left: 10px;
-    z-index: 1000;
-}
-.emoji-picker.active {
-    display: block;
-}
-.file-input {
-    display: none;
-}
-.btn-link {
-    color: #075e54;
-    transition: color 0.2s;
-}
-.btn-link:hover {
-    color: #128c7e;
-}
-.send-btn {
-    border-radius: 50%;
-    width: 40px;
-    height: 40px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: #128c7e;
-}
-
-
-/* updated vechicle */
-
-
-#vehicleContainer .row {
-    display: flex;
-    flex-wrap: wrap; /* Allow cards to wrap to the next line */
-    gap: 1rem; /* Space between cards */
-}
-
-#vehicleContainer .mb-5 {
-    width: 100%; /* Ensure section takes full width */
-}
-
-#vehicleContainer .d-flex {
-    display: flex;
-    flex-wrap: wrap; /* Allow cards to wrap */
-    gap: 1rem; /* Space between cards */
-}
-/* 
-body {
-    overflow-x: hidden; 
-}*/
-
-main {
-    overflow-x: hidden; /
-}
+  color: #0d6efd;
+  }
+  \:root {
+  \--primary-color: #0d6efd;
+  \--secondary-color: #6c757d;
+  \--success-color: #198754;
+  \--danger-color: #dc3545;
+  \--transition-speed: 0.3s;
+  }
+  
+  body {
+  font-family: 'Arial', sans-serif;
+  /\* background-color: #3787d2; \*/
+  overflow-x: hidden;
+  background-size\:cover;
+  background-image: url("[https://i.pinimg.com/736x/2b/b5/d1/2bb5d1a05d4e621d999c3090a997817b.jpg](https://i.pinimg.com/736x/2b/b5/d1/2bb5d1a05d4e621d999c3090a997817b.jpg)");
+  margin: 0;
+  flex-wrap: nowrap;
+  }
+  
+  .header {
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  }
+  
+  .navbar-brand {
+  font-size: 1.5rem;
+  font-weight: bold;
+  }
+  
+  .search-bar {
+  width: 100%;
+  padding: 0.5rem;
+  border-radius: 0.25rem;
+  border: 1px solid #ced4da;
+  font-size: 0.9rem;
+  z-index: 1;
+  }
+  
+  .navbar .dropdown {
+  position: relative;
+  }
+  
+  .navbar .dropdown-menu {
+  z-index: 1100;
+  margin-top: 0.75rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  min-width: 200px;
+  padding: 0.5rem 0;
+  }
+  
+  .navbar .dropdown-menu .dropdown-item {
+  padding: 0.5rem 1rem;
+  font-size: 0.9rem;
+  }
+  
+  .navbar .dropdown-menu .dropdown-item\:hover {
+  background-color: var(--primary-color);
+  color: white;
+  }
+  
+  .filter-section {
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  z-index: 900;
+  }
+  
+  .location-search {
+  z-index: 1;
+  }
+  
+  .vehicle-card {
+  background: white;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  overflow: hidden;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  cursor: pointer;
+  width: 220px;
+  }
+  
+  .vehicle-card\:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  border-color: var(--primary-color);
+  }
+  
+  .vehicle-card-detail {
+  background: #f0f8ff;
+  width: 220px;
+  border-radius:10px;
+  }
+  
+  .vehicle-image {
+  height: 120px;
+  object-fit: cover;
+  }
+  
+  .vehicle-details {
+  padding: 0.75rem;
+  font-size: 1.05rem;
+  }
+  
+  .vehicle-details h6 {
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  }
+  
+  .vehicle-details p {
+  margin: 0 0 0.3rem;
+  color: #333;
+  }
+  
+  .availability {
+  font-weight: bold;
+  }
+  
+  .action-buttons {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  }
+  
+  .btn-action {
+  background: rgba(255, 255, 255, 0.9);
+  border: none;
+  padding: 6px;
+  border-radius: 50%;
+  font-size: 0.9rem;
+  line-height: 1;
+  transition: background-color var(--transition-speed) ease;
+  }
+  
+  .btn-action\:hover {
+  background: var(--primary-color);
+  color: white;
+  }
+  
+  .coupon-card {
+  background: white;
+  border-radius: 8px;
+  transition: transform var(--transition-speed) ease;
+  }
+  
+  .coupon-card\:hover {
+  transform: translateY(-5px);
+  }
+  
+  .footer {
+  background: #343a40;
+  }
+  
+  .footer a {
+  text-decoration: none;
+  }
+  
+  .footer a\:hover {
+  text-decoration: underline;
+  }
+  
+  .overflow-auto::-webkit-scrollbar {
+  height: 8px;
+  }
+  
+  .overflow-auto::-webkit-scrollbar-thumb {
+  background: var(--secondary-color);
+  border-radius: 4px;
+  }
+  
+  .overflow-auto::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  }
+  
+  @media (max-width: 767px) {
+  .vehicle-card, .vehicle-card-detail {
+  width: 200px;
+  }
+  
+  
+  .navbar .dropdown-menu {
+      min-width: 180px;
+      margin-top: 0.5rem;
+      right: 0;
+  }
+  
+  .search-bar, .location-search {
+      font-size: 0.85rem;
+  }
+  
+  
+  }
+  .vehicle-photos {
+  height: 500px; /\* Increase from 400px to 500px for desktop \*/
+  }
+  
+  .vehicle-photos .carousel-inner img {
+  height: 500px; /\* Match the increased height \*/
+  }
+  
+  .vehicle-card-detail {
+  min-height: 500px; /\* Match carousel height for details container \*/
+  }
+  
+  @media (max-width: 767px) {
+  .vehicle-photos {
+  height: 350px; /\* Increase from 300px to 350px for mobile \*/
+  }
+  
+  
+  .vehicle-photos .carousel-inner img {
+      height: 350px; /* Match mobile height */
+  }
+  
+  .vehicle-card-detail {
+      min-height: 350px; /* Match mobile carousel height */
+  }
+  
+  
+  }
+  
+  /\* install css */
+  .install-section {
+  padding: 40px 0;
+  /* background-color: #bbdefb; Slightly darker blue \*/
+  border-radius: 10px;
+  margin: 20px 0;
+  }
+  
+  .install-section img.app-image {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+  }
+  
+  .install-section .btn {
+  border-radius: 20px;
+  padding: 10px 20px;
+  font-size: 1.1rem;
+  transition: transform 0.2s;
+  }
+  
+  .install-section .btn\:hover {
+  transform: scale(1.05);
+  }
+  
+  .install-section .btn i {
+  margin-right: 8px;
+  }
+  
+  .install-section .store-badge {
+  max-width: 150px;
+  margin: 10px;
+  transition: transform 0.2s;
+  }
+  
+  .install-section .store-badge\:hover {
+  transform: scale(1.1);
+  }
+  
+  .install-section .feature-item {
+  font-size: 1rem;
+  margin-bottom: 10px;
+  }
+  
+  .install-section .feature-item i {
+  color: #007bff;
+  margin-right: 10px;
+  }
+  
+  /\* Footer Styles \*/
+  .footer {
+  background-color: #212529;
+  }
+  
+  .footer h5 {
+  font-size: 1.25rem;
+  margin-bottom: 15px;
+  }
+  
+  .footer a {
+  text-decoration: none;
+  }
+  
+  .footer a\:hover {
+  text-decoration: underline;
+  }
+  
+  .social-links a {
+  font-size: 1.2rem;
+  transition: color 0.2s;
+  }
+  
+  .social-links a\:hover {
+  color: #007bff;
+  }
+  
+  /\* Responsive Design \*/
+  @media (max-width: 768px) {
+  .navbar-brand {
+  font-size: 1.2rem;
+  }
+  
+  
+  .search-bar {
+      font-size: 0.9rem;
+  }
+  
+  .install-section {
+      margin: 10px 0;
+      padding: 20px 0;
+  }
+  
+  .install-section .btn {
+      font-size: 1rem;
+      padding: 8px 15px;
+  }
+  
+  .install-section .store-badge {
+      max-width: 120px;
+  }
+  
+  
+  }
+  /\* logout css */
+  .login-container {
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(0,0,0,0.1);
+  background-color: white;
+  }
+  .login-header {
+  text-align: center;
+  margin-bottom: 2rem;
+  }
+  .form-floating {
+  margin-bottom: 1.5rem;
+  }
+  .btn-login {
+  width: 100%;
+  padding: 0.75rem;
+  font-size: 1.1rem;
+  }
+  .divider {
+  display: flex;
+  align-items: center;
+  margin: 1.5rem 0;
+  }
+  .divider::before, .divider::after {
+  content: "";
+  flex: 1;
+  border-bottom: 1px solid #dee2e6;
+  }
+  .divider-text {
+  padding: 0 1rem;
+  color: #6c757d;
+  }
+  .social-login {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+  }
+  .social-btn {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.25rem;
+  }
+  /* chat css */
+  .chat-container {
+  height: calc(100vh - 120px);
+  display: flex;
+  flex-direction: column;
+  /* background-color: #e5ddd5; Plain WhatsApp-like background \*/
+  }
+  .chat-header {
+  background-color: #075e54;
+  color: white;
+  padding: 10px 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+  }
+  .chat-header .profile-pic {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin-right: 10px;
+  }
+  .chat-messages {
+  flex-grow: 1;
+  overflow-y: auto;
+  padding: 15px;
+  }
+  .message {
+  margin-bottom: 10px;
+  max-width: 75%;
+  position: relative;
+  padding: 8px 12px;
+  border-radius: 7.5px;
+  line-height: 1.4;
+  }
+  .message.sent {
+  margin-left: auto;
+  background-color: #d9fdd3;
+  border-bottom-right-radius: 2px;
+  }
+  .message.received {
+  margin-right: auto;
+  background-color: #ffffff;
+  border-bottom-left-radius: 2px;
+  box-shadow: 0 1px 0.5px rgba(0,0,0,0.13);
+  }
+  .message::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  width: 10px;
+  height: 10px;
+  background: inherit;
+  clip-path: polygon(0 0, 100% 100%, 0 100%);
+  }
+  .message.sent::after {
+  right: -10px;
+  transform: rotate(90deg);
+  }
+  .message.received::after {
+  left: -10px;
+  transform: rotate(-90deg);
+  }
+  .message-time {
+  font-size: 0.7rem;
+  color: #666;
+  margin-top: 3px;
+  text-align: right;
+  }
+  .chat-input {
+  display: flex;
+  align-items: center;
+  padding: 8px 10px;
+  background-color: #f0f0f0;
+  border-top: 1px solid #d9d9d9;
+  }
+  .chat-input input {
+  flex-grow: 1;
+  margin: 0 8px;
+  border-radius: 20px;
+  padding: 8px 15px;
+  border: none;
+  }
+  .emoji-picker {
+  display: none;
+  position: absolute;
+  bottom: 60px;
+  left: 10px;
+  z-index: 1000;
+  }
+  .emoji-picker.active {
+  display: block;
+  }
+  .file-input {
+  display: none;
+  }
+  .btn-link {
+  color: #075e54;
+  transition: color 0.2s;
+  }
+  .btn-link\:hover {
+  color: #128c7e;
+  }
+  .send-btn {
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #128c7e;
+  }
+  
+  /\* updated vechicle \*/
+  
+  \#vehicleContainer .row {
+  display: flex;
+  flex-wrap: wrap; /\* Allow cards to wrap to the next line */
+  gap: 1rem; /* Space between cards \*/
+  }
+  
+  \#vehicleContainer .mb-5 {
+  width: 100%; /\* Ensure section takes full width \*/
+  }
+  
+  \#vehicleContainer .d-flex {
+  display: flex;
+  flex-wrap: wrap; /\* Allow cards to wrap */
+  gap: 1rem; /* Space between cards */
+  }
+  /*
+  body {
+  overflow-x: hidden;
+  }\*/
+  
+  main {
+  overflow-x: hidden; /
+  } 

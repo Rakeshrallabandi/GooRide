@@ -2,9 +2,9 @@ const vehiclesData = [
     {
         id: 1,
         images: [
-            'https://images.unsplash.com/photo-1558981806-ec527fa84c39?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80',
-            'https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80',
-            'https://images.unsplash.com/photo-1583244684723-8b17e2f48f52?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80'
+            'https://i.pinimg.com/736x/cd/78/06/cd780695df5ac390539322392f962c83.jpg',
+            'https://i.pinimg.com/736x/60/55/c7/6055c751d0b5796a635e72cacfd34f9b.jpg' ,   
+            'https://i.pinimg.com/736x/1b/aa/ff/1baaffd744ed38beaed46f4255303d74.jpg'
         ],
         plate: 'MH01AB1234',
         location: 'Mumbai Central',
@@ -18,10 +18,10 @@ const vehiclesData = [
     {
         id: 2,
         images: [
-            'https://images.unsplash.com/photo-1601758003122-53c40e686a19?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80',
-            'https://images.unsplash.com/photo-1519125323398-675f0ddb6308?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80',
-            'https://images.unsplash.com/photo-1524169358666-79f8a377e722?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80'
-        ],
+            'https://i.pinimg.com/736x/25/91/ae/2591ae6daff83f12288cacc1bf748f71.jpg',
+            'https://i.pinimg.com/736x/cc/1b/87/cc1b87f822acb28662a927a2a430aaa7.jpg',
+            'https://i.pinimg.com/736x/dc/11/28/dc112846db1abedd646eb0b7d3604999.jpg'
+            ],
         plate: 'KA02CD5678',
         location: 'Bengaluru Tech Park',
         reading: '8,500 km',
@@ -34,10 +34,11 @@ const vehiclesData = [
     {
         id: 3,
         images: [
-            'https://images.unsplash.com/photo-1568772585407-9361f9bf3a87?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80',
-            'https://images.unsplash.com/photo-1598373182133-524368f7b8f9?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80',
-            'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80'
-        ],
+            
+            'https://i.pinimg.com/736x/5d/d9/7b/5dd97ba2780504520e275ed54c9adc4a.jpg',
+            'https://i.pinimg.com/736x/5d/d9/7b/5dd97ba2780504520e275ed54c9adc4a.jpg',
+            'https://i.pinimg.com/736x/5b/d0/eb/5bd0eb7da9ab799ca7ffc989eb733c4d.jpg'
+             ],
         plate: 'DL03EF9012',
         location: 'Delhi Metro Station',
         reading: '12,300 km',
@@ -50,9 +51,9 @@ const vehiclesData = [
     {
         id: 4,
         images: [
-            'https://img.freepik.com/free-photo/black-motorcycle-white_1398-276.jpg?size=626&ext=jpg',
-            'https://img.freepik.com/free-photo/motorcycle-parked-street_23-2148883509.jpg?size=626&ext=jpg',
-            'https://img.freepik.com/free-photo/motorcycle-city_1122-1972.jpg?size=626&ext=jpg'
+            'https://i.pinimg.com/736x/64/bb/36/64bb365e126360a16048da127345bbc5.jpg',
+            'https://i.pinimg.com/736x/12/61/37/12613777d7229ffd9be9735f68659d97.jpg',
+            'https://i.pinimg.com/736x/ec/42/ea/ec42ea5c33f337594f8e49437f833156.jpg'
         ],
         plate: 'TN04GH5678',
         location: 'Chennai Beach',
@@ -66,9 +67,9 @@ const vehiclesData = [
     {
         id: 5,
         images: [
-            'https://images.unsplash.com/photo-1558980663-3685c6962ac3?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80',
-            'https://images.unsplash.com/photo-1542362567-b07e39892a29?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80',
-            'https://images.unsplash.com/photo-1515777315831-cdca12b7df36?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80'
+            'https://i.pinimg.com/736x/7b/33/85/7b33851b687373faeedd9c037fc83d79.jpg',
+            'https://i.pinimg.com/736x/39/6b/a7/396ba77b1b9ad0300ff984c5f74a5ab0.jpg',
+            'https://i.pinimg.com/736x/16/6d/cd/166dcd1b0a62c595057a0960bfad8614.jpg'
         ],
         plate: 'GJ05IJ3456',
         location: 'Ahmedabad City',
@@ -82,9 +83,9 @@ const vehiclesData = [
     {
         id: 6,
         images: [
-            'https://img.freepik.com/free-photo/scooter-city_1122-1974.jpg?size=626&ext=jpg',
-            'https://img.freepik.com/free-photo/scooter-parked-street_23-2148883512.jpg?size=626&ext=jpg',
-            'https://img.freepik.com/free-photo/scooter-urban_1122-1975.jpg?size=626&ext=jpg'
+            'https://i.pinimg.com/736x/e7/03/c0/e703c02b0410f99cc76d2d9d8898c064.jpg',
+            'https://i.pinimg.com/736x/ba/1b/02/ba1b02e9b89ef12a8e823ceb9a89dd22.jpg',
+            'https://i.pinimg.com/736x/3b/6b/9a/3b6b9a7d5ce73604117367369e9333a4.jpg'
         ],
         plate: 'WB06KL7890',
         location: 'Kolkata Esplanade',
@@ -98,10 +99,10 @@ const vehiclesData = [
     {
         id: 7,
         images: [
-            'https://images.unsplash.com/photo-1599819816704-9d7e57799db7?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80',
-            'https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80',
-            'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80'
-        ],
+            'https://i.pinimg.com/736x/02/a9/01/02a901f5e83693774351fd3d2081978d.jpg',
+            'https://i.pinimg.com/736x/f6/0d/af/f60daf0d5f485bb3fbddf1337f2e81f7.jpg',
+            'https://i.pinimg.com/736x/ce/91/a0/ce91a0261792aaabe74c21d882060f9c.jpg'
+            ],
         plate: 'HY07MN1234',
         location: 'Hyderabad Gachibowli',
         reading: '14,500 km',
@@ -114,9 +115,9 @@ const vehiclesData = [
     {
         id: 8,
         images: [
-            'https://img.freepik.com/free-photo/motorcycle-parked-outdoors_23-2148883510.jpg?size=626&ext=jpg',
-            'https://img.freepik.com/free-photo/motorcycle-road_1127-1973.jpg?size=626&ext=jpg',
-            'https://img.freepik.com/free-photo/motorcycle-cityscape_1122-1976.jpg?size=626&ext=jpg'
+            'https://i.pinimg.com/736x/5c/64/7c/5c647cc9d33663809489cda07509ad5b.jpg',
+            'https://i.pinimg.com/736x/09/44/e8/0944e8baf8758bdb20014eb755660203.jpg',
+            'https://i.pinimg.com/736x/0c/d0/80/0cd080eaf0e63dddfe534d35f83dcd91.jpg'
         ],
         plate: 'RJ08OP5678',
         location: 'Jaipur Hawa Mahal',
@@ -130,9 +131,9 @@ const vehiclesData = [
     {
         id: 9,
         images: [
-            'https://images.unsplash.com/photo-1605552746931-2d69338f7d73?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80',
-            'https://images.unsplash.com/photo-1575936129601-85d6b34e74ab?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80',
-            'https://images.unsplash.com/photo-1611651568463-c9e753a8b3df?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80'
+            'https://i.pinimg.com/736x/95/d8/8b/95d88b62203865814744909cdc3fc479.jpg',
+            'https://i.pinimg.com/736x/c5/4f/6c/c54f6c7120c320a1b7b26928d1942c02.jpg',
+            'https://i.pinimg.com/736x/ec/e6/b2/ece6b278f82f444cf80c573f1da3d5ab.jpg'
         ],
         plate: 'UP09QR9012',
         location: 'Lucknow Hazratganj',
@@ -146,9 +147,9 @@ const vehiclesData = [
     {
         id: 10,
         images: [
-            'https://img.freepik.com/free-photo/motorcycle-road_1122-1973.jpg?size=626&ext=jpg',
-            'https://img.freepik.com/free-photo/motorcycle-highway_1122-1977.jpg?size=626&ext=jpg',
-            'https://img.freepik.com/free-photo/motorcycle-urban_1122-1978.jpg?size=626&ext=jpg'
+            'https://i.pinimg.com/736x/e0/9c/a8/e09ca838c3ffb8f9c0f5031ef2eb79e8.jpg',
+            'https://i.pinimg.com/736x/b6/17/02/b6170254a98655db61c9c5828c539dd6.jpg',
+            'https://i.pinimg.com/736x/62/93/cc/6293cccd76b86931a611f90c31f87955.jpg'
         ],
         plate: 'PB10ST3456',
         location: 'Chandigarh Sector 17',
@@ -162,10 +163,10 @@ const vehiclesData = [
     {
         id: 11,
         images: [
-            'https://images.unsplash.com/photo-1610969470708-040f41d84a58?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80',
-            'https://images.unsplash.com/photo-1600585153490-0e6b9c75f9d3?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80',
-            'https://images.unsplash.com/photo-1587045525140-7e61b501d898?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80'
-        ],
+            'https://i.pinimg.com/736x/b9/c9/b1/b9c9b1208ed379b728f0d6bc6a0ced99.jpg',
+            'https://i.pinimg.com/736x/2e/bb/5b/2ebb5b9c3b193d2eda275a1a2b73da8c.jpg',
+            'https://i.pinimg.com/736x/30/ad/86/30ad86b491de41556e36d93cd88e9cca.jpg'
+            ],
         plate: 'MP11UV7890',
         location: 'Bhopal Lake View',
         reading: '9,800 km',
@@ -178,9 +179,9 @@ const vehiclesData = [
     {
         id: 12,
         images: [
-            'https://img.freepik.com/free-photo/scooter-parked_23-2148883511.jpg?size=626&ext=jpg',
-            'https://img.freepik.com/free-photo/scooter-cityscape_1122-1979.jpg?size=626&ext=jpg',
-            'https://img.freepik.com/free-photo/scooter-road_1122-1980.jpg?size=626&ext=jpg'
+            'https://i.pinimg.com/736x/c3/b9/81/c3b981ede90e8f4afeabd9a40c04736d.jpg',
+            'https://i.pinimg.com/736x/e1/57/85/e15785935cbc1cfa5a2bae880f58a106.jpg',
+            'https://i.pinimg.com/736x/d8/34/7c/d8347c7739f6b15fe90c252f90c6edae.jpg'
         ],
         plate: 'OR12WX1234',
         location: 'Bhubaneswar Station',
@@ -194,10 +195,10 @@ const vehiclesData = [
     {
         id: 13,
         images: [
-            'https://images.unsplash.com/photo-1550355291-bbee04a92027?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80',
-            'https://images.unsplash.com/photo-1519642918688-7e2a7b06e4c6?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80',
-            'https://images.unsplash.com/photo-1533473353561-4a38147c9e61?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80'
-        ],
+            'https://i.pinimg.com/736x/63/17/19/6317191e2d0eae274f2bea7d6b0872dc.jpg',
+            'https://i.pinimg.com/736x/c7/fe/06/c7fe06ee58c5cf9a4300bf405e33ff40.jpg',
+            'https://i.pinimg.com/736x/04/df/17/04df17b34b03181eadc537d866b185ca.jpg'
+             ],
         plate: 'AS13YZ5678',
         location: 'Guwahati Riverfront',
         reading: '12,700 km',
@@ -210,9 +211,9 @@ const vehiclesData = [
     {
         id: 14,
         images: [
-            'https://images.unsplash.com/photo-1591017681227-5fb81b549751?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80',
-            'https://images.unsplash.com/photo-1570299436937-7bf3d2898b92?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80',
-            'https://images.unsplash.com/photo-1605146768851-eda79c6196f9?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80'
+            'https://i.pinimg.com/736x/9f/0a/05/9f0a05de8f75c49cea31c5e5b453b7f4.jpg',
+            'https://i.pinimg.com/736x/f3/22/df/f322df4d7faa4e5e39c63ca9078209c0.jpg',
+            'https://i.pinimg.com/736x/b6/fe/6b/b6fe6b138d2bd38ad8b91657fa626c81.jpg'
         ],
         plate: 'JK14AB9012',
         location: 'Srinagar Dal Lake',
@@ -226,9 +227,9 @@ const vehiclesData = [
     {
         id: 15,
         images: [
-            'https://img.freepik.com/free-photo/vespa-scooter-parked_23-2148883513.jpg?size=626&ext=jpg',
-            'https://img.freepik.com/free-photo/vespa-city_1122-1981.jpg?size=626&ext=jpg',
-            'https://img.freepik.com/free-photo/vespa-urban_1122-1982.jpg?size=626&ext=jpg'
+            'https://i.pinimg.com/736x/32/fe/e0/32fee0f54f1cfde17f5dff5be1751fa6.jpg',
+            'https://i.pinimg.com/736x/d9/23/9f/d9239f378b2863642033bf8c37165cdd.jpg',
+            'https://i.pinimg.com/736x/50/09/c2/5009c2cd6b4aec933233d171e91b15d9.jpg'
         ],
         plate: 'KL15CD3456',
         location: 'Kochi Marine Drive',
@@ -242,9 +243,9 @@ const vehiclesData = [
     {
         id: 16,
         images: [
-            'https://img.freepik.com/free-photo/scooter-urban_1122-1987.jpg?size=626&ext=jpg',
-            'https://img.freepik.com/free-photo/scooter-city_1122-1988.jpg?size=626&ext=jpg',
-            'https://img.freepik.com/free-photo/scooter-parked_23-2148883516.jpg?size=626&ext=jpg'
+           'https://i.pinimg.com/736x/41/7d/40/417d4052277d787e3c8959e0233091ce.jpg',
+           'https://i.pinimg.com/736x/8e/03/20/8e0320ed869602ed573d36c565bd55fc.jpg',
+           'https://i.pinimg.com/736x/13/94/0b/13940b4467908a20459b6fb1049124f6.jpg'
         ],
         plate: 'AP16EF7890',
         location: 'Visakhapatnam Beach',
@@ -258,10 +259,10 @@ const vehiclesData = [
     {
         id: 17,
         images: [
-            'https://images.unsplash.com/photo-1605146768851-eda79c6196f9?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80',
-            'https://images.unsplash.com/photo-1570299436937-7bf3d2898b92?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80',
-            'https://images.unsplash.com/photo-1533473353561-4a38147c9e61?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80'
-        ],
+            'https://i.pinimg.com/736x/13/94/0b/13940b4467908a20459b6fb1049124f6.jpg',
+            'https://i.pinimg.com/736x/58/cf/f4/58cff4dd44ed119c5b161853ff6e4f90.jpg',
+            'https://i.pinimg.com/736x/d9/ac/c9/d9acc914bc2590d4b36abf2eadd4a3ba.jpg'
+             ],
         plate: 'GA17GH1234',
         location: 'Goa Panjim',
         reading: '7,200 km',
@@ -274,9 +275,9 @@ const vehiclesData = [
     {
         id: 18,
         images: [
-            'https://img.freepik.com/free-photo/motorcycle-urban_1122-1983.jpg?size=626&ext=jpg',
-            'https://img.freepik.com/free-photo/motorcycle-city_1122-1984.jpg?size=626&ext=jpg',
-            'https://img.freepik.com/free-photo/motorcycle-parked_23-2148883514.jpg?size=626&ext=jpg'
+           'https://i.pinimg.com/736x/23/44/19/23441931df9900a4611b51813c6e4bd9.jpg',
+           'https://i.pinimg.com/736x/5d/02/18/5d0218b58bb0e9e2a38420448d9cf59c.jpg',
+           'https://i.pinimg.com/736x/a0/ce/89/a0ce89e016523040d934529bc2b25295.jpg'
         ],
         plate: 'UK18IJ5678',
         location: 'Dehradun Clock Tower',
@@ -290,10 +291,10 @@ const vehiclesData = [
     {
         id: 19,
         images: [
-            'https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80',
-            'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80',
-            'https://images.unsplash.com/photo-1519125323398-675f0ddb6308?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80'
-        ],
+            'https://i.pinimg.com/736x/6a/72/da/6a72dadbf2756ffa510d1d02cd4a9161.jpg',
+            'https://i.pinimg.com/736x/15/52/12/155212df46a9351f1f4d5f4fec0b2112.jpg',
+            'https://i.pinimg.com/736x/a6/5f/84/a65f849eb7c8810a77c121172a055a4b.jpg'
+            ],
         plate: 'BR19KL9012',
         location: 'Patna Gandhi Maidan',
         reading: '13,800 km',
@@ -306,10 +307,10 @@ const vehiclesData = [
     {
         id: 20,
         images: [
-            'https://img.freepik.com/free-photo/scooter-parked_23-2148883515.jpg?size=626&ext=jpg',
-            'https://img.freepik.com/free-photo/scooter-city_1122-1985.jpg?size=626&ext=jpg',
-            'https://img.freepik.com/free-photo/scooter-urban_1122-1986.jpg?size=626&ext=jpg'
-        ],
+            'https://i.pinimg.com/736x/dd/3c/30/dd3c304bb4299f859694d393dc8b2661.jpg',
+            'https://i.pinimg.com/736x/7e/8d/75/7e8d75fed4018677046f3d3991c0bd2d.jpg',
+            'https://i.pinimg.com/736x/2e/ca/55/2eca5537e9eb52ccc243a2dfba2d2121.jpg'
+             ],
         plate: 'JH20MN3456',
         location: 'Ranchi Lake',
         reading: '6,900 km',
