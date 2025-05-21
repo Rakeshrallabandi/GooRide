@@ -319,7 +319,71 @@ const vehiclesData = [
         coordinates: { lat: 23.3441, lng: 85.3096 },
         type: 'scooter',
         price: '750/day'
-    }
+    },
+    {
+    id: 21,
+    images: [
+        'https://img.freepik.com/free-psd/black-isolated-car_23-2151852894.jpg?ga=GA1.1.1552807996.1689011755&semt=ais_hybrid&w=740',
+        'https://img.freepik.com/free-photo/view-3d-car_23-2150796980.jpg?ga=GA1.1.1552807996.1689011755&semt=ais_hybrid&w=740',
+        'https://img.freepik.com/free-photo/view-3d-car_23-2150796884.jpg?ga=GA1.1.1552807996.1689011755&semt=ais_hybrid&w=740'
+    ],
+    plate: 'UK18IJ5678',
+    location: 'Hyderabad',
+    reading: '9,500 km',
+    model: 'Hyndai',
+    available: true,
+    coordinates: { lat: 30.3165, lng: 78.0322 },
+    type: 'car',
+    price: '1000/day'
+},
+{
+    id: 22,
+    images: [
+        'https://img.freepik.com/free-psd/red-isolated-car_23-2151852902.jpg?ga=GA1.1.1552807996.1689011755&semt=ais_hybrid&w=740',
+        'https://img.freepik.com/free-psd/red-isolated-car_23-2151852874.jpg?ga=GA1.1.1552807996.1689011755&semt=ais_hybrid&w=740',
+        'https://img.freepik.com/free-psd/modern-car-isolated_23-2151504562.jpg?ga=GA1.1.1552807996.1689011755&semt=ais_hybrid&w=740'
+    ],
+    plate: 'TGJ5678',
+    location: 'Hyderabad',
+    reading: '9,500 km',
+    model: 'swift',
+    available: true,
+    coordinates: { lat: 30.3165, lng: 78.0322 },
+    type: 'car',
+    price: '2500/day'
+},
+{
+    id: 23,
+    images: [
+        'https://img.freepik.com/premium-photo/black-jeep-with-license-plate-number-plate-number-36_1176634-428.jpg?ga=GA1.1.1552807996.1689011755&semt=ais_hybrid&w=740',
+        'https://img.freepik.com/premium-photo/black-jeep-climbing-rocks_1167344-39233.jpg?ga=GA1.1.1552807996.1689011755&semt=ais_hybrid&w=740',
+        'https://img.freepik.com/free-photo/off-road-car-wilderness_23-2151483058.jpg?ga=GA1.1.1552807996.1689011755&semt=ais_hybrid&w=740'
+    ],
+    plate: 'TG18IJ5678',
+    location: 'Hyderabad',
+    reading: '9400 km',
+    model: 'Thar',
+    available: true,
+    coordinates: { lat: 30.3165, lng: 78.0322 },
+    type: 'jeep',
+    price: '2000/day'
+},
+{
+    id: 24,
+    images: [
+        'https://img.freepik.com/premium-photo/modern-family-hybrid-blue-car-white-background-with-shadow-ground-3d-rendering_101266-5367.jpg?ga=GA1.1.1552807996.1689011755&semt=ais_hybrid&w=740',
+        'https://img.freepik.com/premium-photo/blue-city-car-with-blank-surface-your-creative-design-3d-rendering_101266-3776.jpg?ga=GA1.1.1552807996.1689011755&semt=ais_hybrid&w=740',
+        'https://img.freepik.com/premium-vector/realistic-vector-blue-city-car-coupe-sport-transportation-isolated-background_33869-3203.jpg?ga=GA1.1.1552807996.1689011755&semt=ais_hybrid&w=740'
+    ],
+    plate: 'TG8IJ5678',
+    location: 'Hyderabad',
+    reading: '9,000 km',
+    model: 'Nexon TATA',
+    available: true,
+    coordinates: { lat: 30.3165, lng: 78.0322 },
+    type: 'car',
+    price: '1020/day'
+}
 ];
 
 // Check if running in a browser environment before accessing localStorage
